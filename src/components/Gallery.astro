@@ -18,8 +18,8 @@ const { photos, tight = false } = Astro.props as { photos: Photo[]; tight?: bool
 <dialog data-lightbox class="m-0 max-h-none max-w-none bg-transparent p-0 outline-none">
   <div class="fixed inset-0 flex flex-col items-center justify-center p-4">
     <img data-lb-img class="max-h-[82vh] max-w-full object-contain shadow-2xl" alt="" />
-    <p data-lb-cap class="mt-3 text-sm text-paper/80"></p>
-    <div class="mt-2 flex gap-3">
+    <p data-lb-cap class="mt-3 font-sans text-sm text-paper/80"></p>
+    <div class="mt-2 flex gap-3 font-sans">
       <button data-lb-prev class="rounded-full bg-paper px-5 py-2 text-sm font-medium">←</button>
       <button data-lb-close class="rounded-full bg-paper px-5 py-2 text-sm font-medium">Close</button>
       <button data-lb-next class="rounded-full bg-paper px-5 py-2 text-sm font-medium">→</button>

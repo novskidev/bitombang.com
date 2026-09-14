@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: Helvetica, Arial, sans-serif;
+  --font-serif: "EB Garamond", Garamond, "Adobe Garamond Pro", Georgia, serif;
   --color-paper: #f8f7f3;
   --color-ink: #161412;
   --color-clay: #4a453e;
@@ -10,7 +11,7 @@
 }
 
 html { scroll-behavior: smooth; }
-body { background: var(--color-paper); color: var(--color-ink); }
+body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-serif); font-size: 18px; }
 
 /* masonry native, tanpa JS lib */
 .masonry { columns: 2; column-gap: 0.5rem; }
