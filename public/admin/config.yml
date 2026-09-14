@@ -1,0 +1,76 @@
+# Bitombang CMS. Login needs the OAuth worker once (see decap-oauth-worker.js).
+backend:
+  name: github
+  repo: novskidev/bitombang.com
+  branch: main
+  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+  auth_endpoint: auth
+
+local_backend: true
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: settings
+    label: Settings
+    files:
+      - name: site
+        label: Site & Contact
+        file: src/data/site.json
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: location, label: Location, widget: string }
+          - { name: email, label: Email, widget: string }
+          - { name: whatsapp, label: WhatsApp (digits only, e.g. 61466377242), widget: string }
+          - { name: instagram, label: Instagram URL, widget: string }
+          - { name: web3formsKey, label: Web3Forms key, widget: string }
+          - name: awards
+            label: Awards
+            widget: list
+            fields:
+              - { name: year, label: Year, widget: string }
+              - { name: text, label: Text, widget: string }
+
+  - name: content
+    label: Content
+    files:
+      - name: collection
+        label: Collection (homepage grid)
+        file: src/data/collection.json
+        fields:
+          - name: photos
+            label: Photos
+            widget: list
+            fields:
+              - { name: src, label: Photo, widget: image, allow_multiple: false }
+              - { name: alt, label: Caption, widget: string }
+              - { name: w, label: Width, widget: number, default: 800, required: false }
+              - { name: h, label: Height, widget: number, default: 1000, required: false }
+
+      - name: projects
+        label: Projects
+        file: src/data/projects.json
+        fields:
+          - name: projects
+            label: Projects
+            widget: list
+            fields:
+              - { name: slug, label: Slug (url-friendly, no spaces), widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: meta, label: Meta (category · place, year), widget: string }
+              - { name: desc, label: Description, widget: text }
+              - name: cover
+                label: Cover
+                widget: object
+                fields:
+                  - { name: src, label: Photo, widget: image }
+                  - { name: alt, label: Caption, widget: string }
+              - name: photos
+                label: Photos
+                widget: list
+                fields:
+                  - { name: src, label: Photo, widget: image }
+                  - { name: alt, label: Caption, widget: string }
+                  - { name: w, label: Width, widget: number, default: 800, required: false }
+                  - { name: h, label: Height, widget: number, default: 1000, required: false }
