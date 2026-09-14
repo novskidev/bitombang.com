@@ -1,4 +1,4 @@
-# Bitombang CMS. Login needs the OAuth worker once (see decap-oauth-worker.js).
+# Budi Pambudi CMS. Login needs the OAuth worker once (see decap-oauth-worker.js).
 backend:
   name: github
   repo: novskidev/bitombang.com
