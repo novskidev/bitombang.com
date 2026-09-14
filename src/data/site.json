@@ -1,1 +1,25 @@
-{"name": "Budi Pambudi", "tagline": "Photographer", "location": "Melbourne, Australia", "email": "manaaki.studio.id@gmail.com", "whatsapp": "61466377242", "instagram": "https://instagram.com/bitombang", "web3formsKey": "a6bde9d7-6e6b-4c57-9ef6-80bf41c547ac", "url": "https://bitombang.com", "awards": [{"year": "2025", "text": "2nd Place, Cultural Photography Contest — Nusantara Festival"}, {"year": "2024", "text": "Solo exhibition “Land & Light” — Galeri Kita"}, {"year": "2023", "text": "Official photographer — Java Wedding Expo"}], "youtube": ""}
+{
+  "youtube": "",
+  "name": "Bitombang",
+  "tagline": "Photographer",
+  "web3formsKey": "a6bde9d7-6e6b-4c57-9ef6-80bf41c547ac",
+  "url": "https://bitombang.com",
+  "whatsapp": "61466377242",
+  "instagram": "https://instagram.com/bitombang",
+  "location": "Melbourne, Australia",
+  "awards": [
+    {
+      "year": "2025",
+      "text": "2nd Place, Cultural Photography Contest — Nusantara Festival"
+    },
+    {
+      "year": "2024",
+      "text": "Solo exhibition “Land & Light” — Galeri Kita"
+    },
+    {
+      "year": "2023",
+      "text": "Official photographer — Java Wedding Expo"
+    }
+  ],
+  "email": "manaaki.studio.id@gmail.com"
+}
