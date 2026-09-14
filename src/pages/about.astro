@@ -7,12 +7,12 @@ import { ABOUT, AWARDS } from '../data/content';
     <img src={ABOUT.photo.src} alt={ABOUT.photo.alt}
       width="560" height="700" class="w-full object-cover" />
     <div>
-      <h1 class="font-display text-4xl font-semibold">{ABOUT.heading}</h1>
+      <h1 class="text-4xl font-semibold">{ABOUT.heading}</h1>
       <p class="mt-4 max-w-2xl leading-relaxed text-ink/80">{ABOUT.intro}</p>
-      <blockquote class="mt-8 max-w-2xl border-l-2 border-ink pl-6 font-display text-2xl leading-snug md:text-3xl">
+      <blockquote class="mt-8 max-w-2xl border-l-2 border-ink pl-6 text-2xl leading-snug md:text-3xl">
         “{ABOUT.quote}”
       </blockquote>
-      <h2 class="mt-10 font-display text-2xl">Awards & exhibitions</h2>
+      <h2 class="mt-10 text-2xl">Awards & exhibitions</h2>
       <ul class="mt-4 space-y-2">
         {AWARDS.map((a) => (
           <li class="flex gap-4"><span class="w-12 shrink-0 font-medium">{a.year}</span><span class="text-ink/80">{a.text}</span></li>
