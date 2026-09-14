@@ -1,19 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE, AWARDS } from '../data/content';
+import { ABOUT, AWARDS } from '../data/content';
 ---
 <Base title="About" desc="About Budi Pambudi — photographer.">
   <div class="grid gap-10 md:grid-cols-[280px_1fr]">
-    <img src="https://picsum.photos/seed/bt-profile/560/700" alt="Photo of Budi Pambudi"
+    <img src={ABOUT.photo.src} alt={ABOUT.photo.alt}
       width="560" height="700" class="w-full object-cover" />
     <div>
-      <h1 class="font-display text-4xl font-semibold">Hi, I'm Budi Pambudi.</h1>
-      <p class="mt-4 max-w-2xl leading-relaxed text-ink/80">
-        A photographer based in {SITE.location}. I shoot weddings, portraits, and landscapes —
-        with a warm, candid style and minimal stiff posing.
-      </p>
+      <h1 class="font-display text-4xl font-semibold">{ABOUT.heading}</h1>
+      <p class="mt-4 max-w-2xl leading-relaxed text-ink/80">{ABOUT.intro}</p>
       <blockquote class="mt-8 max-w-2xl border-l-2 border-ink pl-6 font-display text-2xl leading-snug md:text-3xl">
-        “The best photo is the one that makes you remember the day, not just see the result.”
+        “{ABOUT.quote}”
       </blockquote>
       <h2 class="mt-10 font-display text-2xl">Awards & exhibitions</h2>
       <ul class="mt-4 space-y-2">

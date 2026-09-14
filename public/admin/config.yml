@@ -56,6 +56,20 @@ collections:
               - { name: w, label: Width, widget: number, default: 800, required: false }
               - { name: h, label: Height, widget: number, default: 1000, required: false }
 
+      - name: about
+        label: About page
+        file: src/data/about.json
+        fields:
+          - { name: heading, label: Heading, widget: string }
+          - { name: intro, label: Intro paragraph, widget: text }
+          - { name: quote, label: Quote, widget: text }
+          - name: photo
+            label: Profile photo
+            widget: object
+            fields:
+              - { name: src, label: Photo, widget: image }
+              - { name: alt, label: Caption, widget: string }
+
       - name: projects
         label: Projects
         file: src/data/projects.json
