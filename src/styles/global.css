@@ -18,6 +18,11 @@ body { background: var(--color-paper); color: var(--color-ink); }
 @media (min-width: 1024px) { .masonry { columns: 3; } }
 .masonry > * { break-inside: avoid; margin-bottom: 0.5rem; }
 
+/* varian rapat full-bleed ala jamespopsys (homepage) */
+.masonry.tight { column-gap: 6px; }
+@media (min-width: 1280px) { .masonry.tight { columns: 4; } }
+.masonry.tight > * { margin-bottom: 6px; }
+
 dialog::backdrop { background: rgba(10, 9, 8, 0.92); }
 
 ::selection { background: #161412; color: #f5f1ea; }

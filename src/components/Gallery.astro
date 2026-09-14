@@ -1,9 +1,9 @@
 ---
 import type { Photo } from '../data/content';
-const { photos } = Astro.props as { photos: Photo[] };
+const { photos, tight = false } = Astro.props as { photos: Photo[]; tight?: boolean };
 ---
 <!-- masonry grid + custom lightbox (~50 lines of JS, no lightbox lib) -->
-<div class="masonry" data-gallery>
+<div class:list={['masonry', tight && 'tight']} data-gallery>
   {photos.map((p, i) => (
     <button data-idx={i} class="group relative block w-full cursor-zoom-in overflow-hidden bg-ink/5" aria-label={`Open photo: ${p.alt}`}>
       <img src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" decoding="async"
