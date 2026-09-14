@@ -10,6 +10,13 @@ local_backend: true
 media_folder: public/uploads
 public_folder: /uploads
 
+# upload dari /admin langsung ke Cloudinary (unsigned preset "bitombang")
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: agnegwuz
+    api_key: 972776395823148
+
 collections:
   - name: settings
     label: Settings
