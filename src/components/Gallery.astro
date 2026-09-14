@@ -5,9 +5,12 @@ const { photos } = Astro.props as { photos: Photo[] };
 <!-- masonry grid + custom lightbox (~50 lines of JS, no lightbox lib) -->
 <div class="masonry" data-gallery>
   {photos.map((p, i) => (
-    <button data-idx={i} class="block w-full cursor-zoom-in overflow-hidden bg-ink/5" aria-label={`Buka foto: ${p.alt}`}>
+    <button data-idx={i} class="group relative block w-full cursor-zoom-in overflow-hidden bg-ink/5" aria-label={`Open photo: ${p.alt}`}>
       <img src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" decoding="async"
-        class="w-full transition-transform duration-300 hover:scale-[1.02]" />
+        class="w-full transition-transform duration-300 group-hover:scale-[1.02]" />
+      <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-3 pb-2 pt-8 text-left text-sm text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        {p.alt}
+      </span>
     </button>
   ))}
 </div>

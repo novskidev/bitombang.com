@@ -49,18 +49,25 @@ const active = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
       <nav class="mt-10 flex flex-col gap-1">
         {nav.map((n) => (
           <a href={n.href}
-            class:list={['rounded px-3 py-2 text-lg transition-colors hover:bg-ink/5', active(n.href) && 'font-semibold underline underline-offset-4']}>
+            class:list={['flex items-center gap-3 rounded px-3 py-2 text-lg transition-colors hover:bg-ink/5', active(n.href) && 'font-semibold']}>
+            <span class:list={['h-1.5 w-1.5 shrink-0 rounded-full', active(n.href) ? 'bg-ink' : 'bg-ink/20']}></span>
             {n.label}
           </a>
         ))}
       </nav>
     </div>
-    <div class="flex gap-4 text-sm">
-      <a href={SITE.instagram} target="_blank" rel="noreferrer" class="underline underline-offset-4">IG</a>
-      <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer" class="underline underline-offset-4">WA</a>
-      <a href={`mailto:${SITE.email}`} class="underline underline-offset-4">Email</a>
+    <div>
+      <div class="flex gap-4 text-sm">
+        <a href={SITE.instagram} target="_blank" rel="noreferrer" class="underline underline-offset-4">IG</a>
+        <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer" class="underline underline-offset-4">WA</a>
+        <a href={`mailto:${SITE.email}`} class="underline underline-offset-4">Email</a>
+      </div>
+      <p class="mt-4 text-xs text-ink/50">{SITE.location}<br />© {new Date().getFullYear()} {SITE.name}</p>
     </div>
   </aside>
+
+  <!-- backdrop menu mobile -->
+  <div id="backdrop" class="fixed inset-0 z-30 hidden bg-ink/50 md:hidden"></div>
 
   <!-- konten -->
   <div class="min-h-screen md:pl-[280px]">
@@ -72,15 +79,19 @@ const active = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
   <script>
     const btn = document.getElementById('menuBtn');
     const bar = document.getElementById('sidebar');
-    btn?.addEventListener('click', () => {
-      const open = bar?.classList.toggle('hidden');
-      btn.textContent = open ? 'Menu' : 'Close';
-      bar?.classList.toggle('flex', !open);
-    });
+    const drop = document.getElementById('backdrop');
+    const setMenu = (open) => {
+      bar?.classList.toggle('hidden', !open);
+      bar?.classList.toggle('flex', open);
+      drop?.classList.toggle('hidden', !open);
+      if (btn) btn.textContent = open ? 'Close' : 'Menu';
+    };
+    btn?.addEventListener('click', () => setMenu(bar?.classList.contains('hidden')));
+    drop?.addEventListener('click', () => setMenu(false));
     // close menu after navigation on mobile
     bar?.querySelectorAll('a').forEach((a) =>
       a.addEventListener('click', () => {
-        if (window.innerWidth < 768) { bar.classList.add('hidden'); bar.classList.remove('flex'); if (btn) btn.textContent = 'Menu'; }
+        if (window.innerWidth < 768) setMenu(false);
       })
     );
   </script>
