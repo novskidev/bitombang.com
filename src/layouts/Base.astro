@@ -1,14 +1,15 @@
 ---
 import '../styles/global.css';
 import { SITE } from '../data/content';
+import { withBase } from '../lib/base';
 
 const { title = SITE.name, desc = 'Bitombang photography portfolio — collection, project, about, contact.', wide = false } = Astro.props;
 const path = Astro.url.pathname;
 const nav = [
-  { href: '/', label: 'Collection' },
-  { href: '/project', label: 'Project' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: withBase('/'), label: 'Collection' },
+  { href: withBase('/project'), label: 'Project' },
+  { href: withBase('/about'), label: 'About' },
+  { href: withBase('/contact'), label: 'Contact' },
 ];
 const socials = [
   { href: (SITE as { youtube?: string }).youtube, label: 'YouTube' },
@@ -26,13 +27,13 @@ const active = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
   <meta property="og:title" content={`${title} — ${SITE.name}`} />
   <meta property="og:description" content={desc} />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content={`${SITE.url}${Astro.url.pathname}`} />
+  <meta property="og:url" content={Astro.url.href} />
   <meta property="og:image" content="https://picsum.photos/seed/bt-og/1200/630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#f8f7f3" />
-  <link rel="canonical" href={`${SITE.url}${Astro.url.pathname}`} />
+  <link rel="canonical" href={Astro.url.href} />
   <link rel="preconnect" href="https://picsum.photos" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
@@ -49,7 +50,7 @@ const active = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
     <aside id="sidebar"
       class="fixed inset-y-0 left-0 z-40 hidden w-[200px] min-w-[200px] flex-col justify-between overflow-y-auto border-r border-line bg-paper p-8 font-sans md:sticky md:top-0 md:flex md:h-screen" style="padding:40px 32px">
       <div>
-        <a href="/" class="block">
+        <a href={withBase('/')} class="block">
           <div class="text-[22px] font-bold uppercase leading-tight tracking-[0.01em]">{SITE.name}</div>
           <div class="mb-11 mt-1 text-[13px] uppercase tracking-[0.08em] text-mute">{SITE.tagline}</div>
         </a>

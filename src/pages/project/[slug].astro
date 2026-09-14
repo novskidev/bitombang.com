@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Gallery from '../../components/Gallery.astro';
 import { PROJECTS } from '../../data/content';
+import { withBase } from '../../lib/base';
 
 export function getStaticPaths() {
   return PROJECTS.map((p) => ({ params: { slug: p.slug }, props: { p } }));
@@ -9,7 +10,7 @@ export function getStaticPaths() {
 const { p } = Astro.props;
 ---
 <Base title={p.title} desc={p.desc}>
-  <a href="/project" class="text-sm underline underline-offset-4">← All projects</a>
+  <a href={withBase('/project')} class="text-sm underline underline-offset-4">← All projects</a>
   <h1 class="mt-4 font-sans text-4xl font-semibold">{p.title}</h1>
   <p class="mt-1 text-sm text-ink/60">{p.meta}</p>
   <p class="mt-4 max-w-2xl text-ink/80">{p.desc}</p>

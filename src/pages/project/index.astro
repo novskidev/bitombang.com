@@ -1,13 +1,14 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { PROJECTS } from '../../data/content';
+import { withBase } from '../../lib/base';
 ---
 <Base title="Project" desc="Budi Pambudi photo series grouped by project.">
   <h1 class="font-sans text-4xl font-semibold">Project</h1>
   <p class="mt-2 text-ink/60">Series grouped by story.</p>
   <div class="mt-8 grid gap-8 sm:grid-cols-2">
     {PROJECTS.map((p) => (
-      <a href={`/project/${p.slug}`} class="group block">
+      <a href={withBase(`/project/${p.slug}`)} class="group block">
         <div class="overflow-hidden bg-ink/5">
           <img src={p.cover.src} alt={p.cover.alt} width={p.cover.w} height={p.cover.h}
             loading="lazy" class="aspect-[3/2] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
