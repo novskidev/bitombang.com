@@ -31,6 +31,7 @@ collections:
           - { name: email, label: Email, widget: string }
           - { name: whatsapp, label: WhatsApp (digits only, e.g. 61466377242), widget: string }
           - { name: instagram, label: Instagram URL, widget: string }
+          - { name: youtube, label: YouTube URL (empty = hidden), widget: string, required: false }
           - { name: web3formsKey, label: Web3Forms key, widget: string }
           - name: awards
             label: Awards

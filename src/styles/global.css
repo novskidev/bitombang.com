@@ -3,8 +3,11 @@
 @theme {
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --color-paper: #f5f1ea;
+  --color-paper: #f8f7f3;
   --color-ink: #161412;
+  --color-clay: #4a453e;
+  --color-mute: #9a938a;
+  --color-line: #e4e0d8;
 }
 
 html { scroll-behavior: smooth; }

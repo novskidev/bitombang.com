@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import { SITE } from '../data/content';
 
-const { title = SITE.name, desc = 'Portofolio fotografi Bitombang — collection, project, about, contact.' } = Astro.props;
+const { title = SITE.name, desc = 'Bitombang photography portfolio — collection, project, about, contact.' } = Astro.props;
 const path = Astro.url.pathname;
 const nav = [
   { href: '/', label: 'Collection' },
@@ -10,6 +10,10 @@ const nav = [
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
+const socials = [
+  { href: (SITE as { youtube?: string }).youtube, label: 'YouTube' },
+  { href: SITE.instagram, label: 'Instagram' },
+].filter((s) => s.href);
 const active = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
 ---
 <!doctype html>
@@ -25,7 +29,7 @@ const active = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
   <meta property="og:url" content={`${SITE.url}${Astro.url.pathname}`} />
   <meta property="og:image" content="https://picsum.photos/seed/bt-og/1200/630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#f5f1ea" />
+  <meta name="theme-color" content="#f8f7f3" />
   <link rel="canonical" href={`${SITE.url}${Astro.url.pathname}`} />
   <link rel="preconnect" href="https://picsum.photos" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -36,44 +40,47 @@ const active = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
 <body class="font-sans antialiased">
   <!-- hamburger mobile -->
   <button id="menuBtn" aria-label="Open menu"
-    class="fixed left-4 top-4 z-50 rounded-full bg-ink px-4 py-2 text-sm text-paper md:hidden" style="background:#161412;color:#f5f1ea">
+    class="fixed left-4 top-4 z-50 rounded-full px-4 py-2 text-sm text-paper md:hidden" style="background:#1a1a1a;color:#f8f7f3">
     Menu
   </button>
 
-  <!-- sidebar -->
-  <aside id="sidebar"
-    class="fixed inset-y-0 left-0 z-40 hidden w-[280px] flex-col justify-between border-r border-ink/10 bg-paper p-8 md:flex">
-    <div>
-      <a href="/" class="font-display text-3xl font-semibold tracking-tight">BITOMBANG</a>
-      <p class="mt-1 text-sm text-ink/60">{SITE.tagline} · {SITE.location}</p>
-      <nav class="mt-10 flex flex-col gap-1">
-        {nav.map((n) => (
-          <a href={n.href}
-            class:list={['flex items-center gap-3 rounded px-3 py-2 text-lg transition-colors hover:bg-ink/5', active(n.href) && 'font-semibold']}>
-            <span class:list={['h-1.5 w-1.5 shrink-0 rounded-full', active(n.href) ? 'bg-ink' : 'bg-ink/20']}></span>
-            {n.label}
+  <div class="md:flex md:min-h-screen">
+    <!-- sidebar -->
+    <aside id="sidebar"
+      class="fixed inset-y-0 left-0 z-40 hidden w-[200px] min-w-[200px] flex-col justify-between overflow-y-auto border-r border-line bg-paper p-8 md:sticky md:top-0 md:flex md:h-screen" style="padding:40px 32px">
+      <div>
+        <a href="/" class="block">
+          <div class="text-[22px] font-bold uppercase leading-tight tracking-[0.01em]">{SITE.name}</div>
+          <div class="mb-11 mt-1 text-[13px] uppercase tracking-[0.08em] text-mute">{SITE.tagline}</div>
+        </a>
+        <nav class="flex flex-col gap-4">
+          {nav.map((n) => (
+            <a href={n.href}
+              class:list={['text-[15px] transition-colors hover:text-ink', active(n.href) ? 'font-semibold text-ink' : 'text-clay']}>
+              {n.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+      <div class="mt-6 flex flex-col gap-2.5">
+        {socials.map((s) => (
+          <a href={s.href} target="_blank" rel="noreferrer" class="text-[13px] tracking-[0.03em] text-mute hover:text-ink">
+            {s.label}
           </a>
         ))}
-      </nav>
-    </div>
-    <div>
-      <div class="flex gap-4 text-sm">
-        <a href={SITE.instagram} target="_blank" rel="noreferrer" class="underline underline-offset-4">IG</a>
-        <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer" class="underline underline-offset-4">WA</a>
-        <a href={`mailto:${SITE.email}`} class="underline underline-offset-4">Email</a>
+        <div class="mt-2 text-[11px] tracking-[0.04em] text-[#b0aba1]">© {new Date().getFullYear()} {SITE.name}</div>
       </div>
-      <p class="mt-4 text-xs text-ink/50">{SITE.location}<br />© {new Date().getFullYear()} {SITE.name}</p>
+    </aside>
+
+    <!-- backdrop menu mobile -->
+    <div id="backdrop" class="fixed inset-0 z-30 hidden bg-ink/50 md:hidden"></div>
+
+    <!-- konten -->
+    <div class="min-w-0 flex-1">
+      <main class="mx-auto max-w-6xl px-4 pb-24 pt-16 md:px-8 md:pt-10">
+        <slot />
+      </main>
     </div>
-  </aside>
-
-  <!-- backdrop menu mobile -->
-  <div id="backdrop" class="fixed inset-0 z-30 hidden bg-ink/50 md:hidden"></div>
-
-  <!-- konten -->
-  <div class="min-h-screen md:pl-[280px]">
-    <main class="mx-auto max-w-6xl px-4 pb-24 pt-16 md:px-8 md:pt-10">
-      <slot />
-    </main>
   </div>
 
   <script>
