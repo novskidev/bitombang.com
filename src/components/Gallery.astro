@@ -1,0 +1,61 @@
+---
+import type { Photo } from '../data/content';
+const { photos } = Astro.props as { photos: Photo[] };
+---
+<!-- masonry grid + custom lightbox (~50 lines of JS, no lightbox lib) -->
+<div class="masonry" data-gallery>
+  {photos.map((p, i) => (
+    <button data-idx={i} class="block w-full cursor-zoom-in overflow-hidden bg-ink/5" aria-label={`Buka foto: ${p.alt}`}>
+      <img src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" decoding="async"
+        class="w-full transition-transform duration-300 hover:scale-[1.02]" />
+    </button>
+  ))}
+</div>
+
+<dialog data-lightbox class="m-0 max-h-none max-w-none bg-transparent p-0 outline-none">
+  <div class="fixed inset-0 flex flex-col items-center justify-center p-4">
+    <img data-lb-img class="max-h-[82vh] max-w-full object-contain shadow-2xl" alt="" />
+    <p data-lb-cap class="mt-3 text-sm text-paper/80"></p>
+    <div class="mt-2 flex gap-3">
+      <button data-lb-prev class="rounded-full bg-paper px-5 py-2 text-sm font-medium">←</button>
+      <button data-lb-close class="rounded-full bg-paper px-5 py-2 text-sm font-medium">Close</button>
+      <button data-lb-next class="rounded-full bg-paper px-5 py-2 text-sm font-medium">→</button>
+    </div>
+  </div>
+</dialog>
+
+<script define:vars={{ photos }}>
+  const gallery = document.querySelector('[data-gallery]');
+  const dlg = document.querySelector('[data-lightbox]');
+  const img = dlg?.querySelector('[data-lb-img]');
+  const cap = dlg?.querySelector('[data-lb-cap]');
+  let cur = 0, startX = 0;
+
+  const show = (i) => {
+    cur = (i + photos.length) % photos.length;
+    img.src = photos[cur].src.replace(/\/\d+\/\d+$/, '/1200/1600');
+    img.alt = photos[cur].alt;
+    cap.textContent = `${photos[cur].alt} · ${cur + 1}/${photos.length}`;
+  };
+  gallery?.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-idx]');
+    if (!b || !dlg) return;
+    show(+b.dataset.idx);
+    dlg.showModal();
+  });
+  dlg?.querySelector('[data-lb-close]')?.addEventListener('click', () => dlg.close());
+  dlg?.querySelector('[data-lb-prev]')?.addEventListener('click', () => show(cur - 1));
+  dlg?.querySelector('[data-lb-next]')?.addEventListener('click', () => show(cur + 1));
+  dlg?.addEventListener('click', (e) => { if (e.target === dlg.firstElementChild) dlg.close(); });
+  document.addEventListener('keydown', (e) => {
+    if (!dlg?.open) return;
+    if (e.key === 'ArrowRight') show(cur + 1);
+    if (e.key === 'ArrowLeft') show(cur - 1);
+  });
+  // swipe mobile
+  dlg?.addEventListener('touchstart', (e) => (startX = e.touches[0].clientX), { passive: true });
+  dlg?.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+  });
+</script>

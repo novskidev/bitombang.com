@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/content';
+const wa = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hi, I would like to book a photo session.')}`;
+---
+<Base title="Contact" desc="Contact Bitombang to book a photo session.">
+  <h1 class="font-display text-4xl font-semibold">Contact</h1>
+  <p class="mt-2 text-ink/60">Replies within 24 hours on working days.</p>
+
+  <div class="mt-8 grid gap-10 md:grid-cols-2">
+    <div class="space-y-3">
+      <a href={wa} target="_blank" rel="noreferrer" class="block rounded border border-ink/15 p-4 hover:bg-ink/5">
+        <p class="text-sm text-ink/60">WhatsApp</p>
+        <p class="font-medium">{SITE.whatsapp} →</p>
+      </a>
+      <a href={`mailto:${SITE.email}`} class="block rounded border border-ink/15 p-4 hover:bg-ink/5">
+        <p class="text-sm text-ink/60">Email</p>
+        <p class="font-medium">{SITE.email} →</p>
+      </a>
+      <a href={SITE.instagram} target="_blank" rel="noreferrer" class="block rounded border border-ink/15 p-4 hover:bg-ink/5">
+        <p class="text-sm text-ink/60">Instagram</p>
+        <p class="font-medium">@bitombang →</p>
+      </a>
+      <p class="text-sm text-ink/60">Based in: {SITE.location}</p>
+    </div>
+
+    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+      <input type="hidden" name="access_key" value={SITE.web3formsKey} />
+      <input type="hidden" name="subject" value="New message from bitombang.com" />
+      <input type="hidden" name="redirect" value="https://bitombang.com/thanks" />
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+      <label class="block">Name<input required name="name" placeholder="Your name"
+        class="mt-1 w-full rounded border border-ink/15 bg-transparent p-3 outline-none focus:border-ink" /></label>
+      <label class="block">Email<input required type="email" name="email" placeholder="you@email.com"
+        class="mt-1 w-full rounded border border-ink/15 bg-transparent p-3 outline-none focus:border-ink" /></label>
+      <label class="block">Service type
+        <select name="service" class="mt-1 w-full rounded border border-ink/15 bg-transparent p-3 outline-none focus:border-ink">
+          <option>Prewedding / Wedding</option><option>Portrait / Family</option>
+          <option>Editorial / Brand</option><option>Other</option>
+        </select></label>
+      <label class="block">Message<textarea required name="message" rows="4" placeholder="Tell me what you need…"
+        class="mt-1 w-full rounded border border-ink/15 bg-transparent p-3 outline-none focus:border-ink"></textarea></label>
+      <button class="rounded-full px-6 py-3 text-paper" style="background:#161412">Send message</button>
+    </form>
+  </div>
+</Base>
