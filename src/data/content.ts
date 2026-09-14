@@ -1,6 +1,7 @@
 // Thin typed wrapper — Decap CMS edits the JSON files below, pages import from here.
 import siteData from './site.json';
 import aboutData from './about.json';
+import contactData from './contact.json';
 import collectionData from './collection.json';
 import projectsData from './projects.json';
 
@@ -22,5 +23,10 @@ export const ABOUT = aboutData as {
   heading: string;
   intro: string;
   quote: string;
+  photo: Photo;
+};
+export const CONTACT = contactData as {
+  heading: string;
+  note: string;
   photo: Photo;
 };

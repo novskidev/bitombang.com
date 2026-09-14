@@ -70,6 +70,19 @@ collections:
               - { name: src, label: Photo, widget: image }
               - { name: alt, label: Caption, widget: string }
 
+      - name: contact
+        label: Contact page
+        file: src/data/contact.json
+        fields:
+          - { name: heading, label: Heading, widget: string }
+          - { name: note, label: Note under heading, widget: string }
+          - name: photo
+            label: Photo
+            widget: object
+            fields:
+              - { name: src, label: Photo, widget: image }
+              - { name: alt, label: Caption, widget: string }
+
       - name: projects
         label: Projects
         file: src/data/projects.json
