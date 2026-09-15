@@ -3,7 +3,7 @@ backend:
   name: github
   repo: novskidev/bitombang.com
   branch: main
-  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+  base_url: https://bitombang-oauth.manaaki-studio-id.workers.dev
   auth_endpoint: auth
 
 local_backend: true
