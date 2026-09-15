@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import { ABOUT, AWARDS } from '../data/content';
-import { withBase } from '../lib/base';
 ---
 <Base title="About" desc="About Budi Pambudi — photographer.">
   <div class="grid gap-12 md:grid-cols-[360px_1fr] md:gap-16">
@@ -27,10 +26,6 @@ import { withBase } from '../lib/base';
           </li>
         ))}
       </ul>
-
-      <a href={withBase('/contact')} class="mt-12 inline-block border-b border-ink pb-1 font-sans">
-        Book a session →
-      </a>
     </div>
   </div>
 </Base>
