@@ -1,12 +1,6 @@
 {
   "photos": [
     {
-      "w": 800,
-      "h": 1000,
-      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789399609/view_sawah.webp",
-      "alt": "foto sawah"
-    },
-    {
       "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474402/DSCF6519.jpg",
       "alt": "Country side",
       "w": 700,
