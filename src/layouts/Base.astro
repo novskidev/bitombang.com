@@ -48,28 +48,28 @@ const active = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
   <div class="md:flex md:min-h-screen">
     <!-- sidebar -->
     <aside id="sidebar"
-      class="fixed inset-y-0 left-0 z-40 hidden w-[200px] min-w-[200px] flex-col justify-between overflow-y-auto border-r border-line bg-paper p-8 font-sans md:sticky md:top-0 md:flex md:h-screen" style="padding:40px 32px">
+      class="fixed inset-y-0 left-0 z-40 hidden w-[280px] min-w-[280px] flex-col justify-between overflow-y-auto border-r border-line bg-paper p-8 font-sans md:sticky md:top-0 md:flex md:h-screen" style="padding:56px 44px">
       <div>
         <a href={withBase('/')} class="block">
-          <div class="text-[22px] font-bold uppercase leading-tight tracking-[0.01em]">{SITE.name}</div>
-          <div class="mb-11 mt-1 text-[13px] uppercase tracking-[0.08em] text-mute">{SITE.tagline}</div>
+          <div class="text-[28px] font-bold uppercase leading-tight tracking-[0.01em]">{SITE.name}</div>
+          <div class="mb-14 mt-1.5 text-sm uppercase tracking-[0.08em] text-mute">{SITE.tagline}</div>
         </a>
-        <nav class="flex flex-col gap-4">
+        <nav class="flex flex-col gap-5">
           {nav.map((n) => (
             <a href={n.href}
-              class:list={['text-[15px] transition-colors hover:text-ink', active(n.href) ? 'font-semibold text-ink' : 'text-clay']}>
+              class:list={['text-lg transition-colors hover:text-ink', active(n.href) ? 'font-semibold text-ink' : 'text-clay']}>
               {n.label}
             </a>
           ))}
         </nav>
       </div>
-      <div class="mt-6 flex flex-col gap-2.5">
+      <div class="mt-6 flex flex-col gap-3">
         {socials.map((s) => (
-          <a href={s.href} target="_blank" rel="noreferrer" class="text-[13px] tracking-[0.03em] text-mute hover:text-ink">
+          <a href={s.href} target="_blank" rel="noreferrer" class="text-sm tracking-[0.03em] text-mute hover:text-ink">
             {s.label}
           </a>
         ))}
-        <div class="mt-2 text-[11px] tracking-[0.04em] text-[#b0aba1]">© {new Date().getFullYear()} {SITE.name}</div>
+        <div class="mt-2 text-xs tracking-[0.04em] text-[#b0aba1]">© {new Date().getFullYear()} {SITE.name}</div>
       </div>
     </aside>
 
