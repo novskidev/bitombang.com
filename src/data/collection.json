@@ -83,6 +83,24 @@
       "h": 1000,
       "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789399556/sawah.webp",
       "alt": "foto sawah"
+    },
+    {
+      "w": 800,
+      "h": 988,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789473056/DSCF7480.jpg",
+      "alt": "Golden morning walk"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789472851/DSCF8099.jpg",
+      "alt": "Dusk"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789472845/DSCF8005.jpg",
+      "alt": "With sunset"
     }
   ]
 }
