@@ -14,12 +14,14 @@ html { scroll-behavior: smooth; }
 body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-serif); font-size: 18px; }
 
 /* masonry native, tanpa JS lib */
-.masonry { columns: 2; column-gap: 0.5rem; }
+.masonry { columns: 1; column-gap: 0.5rem; }
+@media (min-width: 640px) { .masonry { columns: 2; } }
 @media (min-width: 1024px) { .masonry { columns: 3; } }
 .masonry > * { break-inside: avoid; margin-bottom: 0.5rem; }
 
 /* varian rapat full-bleed ala jamespopsys (homepage) */
-.masonry.tight { column-gap: 6px; }
+.masonry.tight { columns: 1; column-gap: 6px; }
+@media (min-width: 640px) { .masonry.tight { columns: 2; } }
 @media (min-width: 1280px) { .masonry.tight { columns: 4; } }
 .masonry.tight > * { margin-bottom: 6px; }
 
