@@ -28,11 +28,24 @@ export default {
         }),
       });
       const data = await res.json();
-      const msg = data.access_token
-        ? `authorization:github:success:${JSON.stringify({ token: data.access_token, provider: 'github' })}`
-        : `authorization:github:error:${JSON.stringify(data)}`;
+      const status = data.access_token ? 'success' : 'error';
+      const payload = data.access_token
+        ? JSON.stringify({ token: data.access_token, provider: 'github' })
+        : JSON.stringify(data);
+      // Decap butuh handshake: popup nunggu parent "siap" (message apa pun) baru kirim token asli,
+      // baru window ditutup. Kirim langsung tanpa nunggu bikin Decap nggak sempat nangkep pesannya.
       return new Response(
-        `<script>window.opener.postMessage('${msg}', '*');window.close();</script>`,
+        `<script>
+          (function () {
+            function receiveMessage(e) {
+              window.opener.postMessage('authorization:github:${status}:${payload}', e.origin);
+              window.removeEventListener('message', receiveMessage, false);
+              window.close();
+            }
+            window.addEventListener('message', receiveMessage, false);
+            window.opener.postMessage('authorizing:github', '*');
+          })();
+        </script>`,
         { headers: { 'Content-Type': 'text/html' } },
       );
     }
