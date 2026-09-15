@@ -48,16 +48,16 @@ const active = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
   <div class="md:flex md:min-h-screen">
     <!-- sidebar -->
     <aside id="sidebar"
-      class="fixed inset-y-0 left-0 z-40 hidden w-[45%] min-w-0 flex-col justify-between overflow-y-auto border-r border-line bg-paper px-4 py-6 font-sans md:sticky md:top-0 md:flex md:h-screen md:w-[280px] md:min-w-[280px] md:px-11 md:py-14">
+      class="fixed inset-y-0 left-0 z-40 hidden w-[60%] min-w-0 flex-col justify-between overflow-y-auto border-r border-line bg-paper px-4 py-6 font-sans md:sticky md:top-0 md:flex md:h-screen md:w-[280px] md:min-w-[280px] md:px-11 md:py-14">
       <div>
         <a href={withBase('/')} class="block">
-          <div class="text-3xl font-bold uppercase leading-tight tracking-[0.01em]">{SITE.name}</div>
-          <div class="mb-14 mt-1.5 text-lg uppercase tracking-[0.08em] text-mute">{SITE.tagline}</div>
+          <div class="text-2xl font-bold uppercase leading-tight tracking-[0.01em] md:text-3xl">{SITE.name}</div>
+          <div class="mb-8 mt-1.5 text-sm uppercase tracking-[0.08em] text-mute md:mb-14 md:text-lg">{SITE.tagline}</div>
         </a>
-        <nav class="flex flex-col gap-6">
+        <nav class="flex flex-col gap-4 md:gap-6">
           {nav.map((n) => (
             <a href={n.href}
-              class:list={['text-2xl transition-colors hover:text-ink', active(n.href) ? 'font-semibold text-ink' : 'text-clay']}>
+              class:list={['text-lg transition-colors hover:text-ink md:text-2xl', active(n.href) ? 'font-semibold text-ink' : 'text-clay']}>
               {n.label}
             </a>
           ))}
