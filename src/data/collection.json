@@ -7,82 +7,16 @@
       "alt": "foto sawah"
     },
     {
-      "src": "https://picsum.photos/seed/bt-c1/700/950",
-      "alt": "Portrait at dusk",
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474402/DSCF6519.jpg",
+      "alt": "Country side",
       "w": 700,
       "h": 950
     },
     {
-      "src": "https://picsum.photos/seed/bt-c2/700/480",
-      "alt": "Morning fog in the valley",
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474439/DSCF7485.jpg",
+      "alt": "Sunrise",
       "w": 700,
       "h": 480
-    },
-    {
-      "src": "https://picsum.photos/seed/bt-c3/700/700",
-      "alt": "Studio portrait",
-      "w": 700,
-      "h": 700
-    },
-    {
-      "src": "https://picsum.photos/seed/bt-c4/700/1000",
-      "alt": "Traditional wedding",
-      "w": 700,
-      "h": 1000
-    },
-    {
-      "src": "https://picsum.photos/seed/bt-c5/700/520",
-      "alt": "South coast",
-      "w": 700,
-      "h": 520
-    },
-    {
-      "src": "https://picsum.photos/seed/bt-c6/700/880",
-      "alt": "Fabric editorial",
-      "w": 700,
-      "h": 880
-    },
-    {
-      "src": "https://picsum.photos/seed/bt-c7/700/600",
-      "alt": "City street at night",
-      "w": 700,
-      "h": 600
-    },
-    {
-      "src": "https://picsum.photos/seed/bt-c8/700/920",
-      "alt": "Prewedding in the rice fields",
-      "w": 700,
-      "h": 920
-    },
-    {
-      "src": "https://picsum.photos/seed/bt-c9/700/500",
-      "alt": "Misty mountains",
-      "w": 700,
-      "h": 500
-    },
-    {
-      "src": "https://picsum.photos/seed/bt-c10/700/760",
-      "alt": "Mother and child portrait",
-      "w": 700,
-      "h": 760
-    },
-    {
-      "src": "https://picsum.photos/seed/bt-c11/700/640",
-      "alt": "Morning market",
-      "w": 700,
-      "h": 640
-    },
-    {
-      "src": "https://picsum.photos/seed/bt-c12/700/980",
-      "alt": "Bride waiting",
-      "w": 700,
-      "h": 980
-    },
-    {
-      "w": 800,
-      "h": 1000,
-      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789399556/sawah.webp",
-      "alt": "foto sawah"
     },
     {
       "w": 800,
@@ -101,6 +35,66 @@
       "h": 1000,
       "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789472845/DSCF8005.jpg",
       "alt": "With sunset"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474441/DSCF7492.jpg",
+      "alt": "Early morning"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474579/DSCF7769.jpg",
+      "alt": "Hanging on worst feeling?"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474584/DSCF7474.jpg",
+      "alt": "Early morning"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474587/DSCF7354.jpg",
+      "alt": "Glimmer"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474593/DSCF7318.jpg",
+      "alt": "Greeny"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474594/DSCF7398.jpg",
+      "alt": "Wandering Aussie plant"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474599/DSCF7372.jpg",
+      "alt": "Selfie with sunset"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474882/DSCF6853.jpg",
+      "alt": "Matilde"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474887/DSCF6958.jpg",
+      "alt": "Walk with a friend"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789475014/DSCF7664.jpg",
+      "alt": "Selfie."
     }
   ]
 }
