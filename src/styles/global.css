@@ -19,11 +19,9 @@ body { background: var(--color-paper); color: var(--color-ink); font-family: var
 @media (min-width: 1024px) { .masonry { columns: 3; } }
 .masonry > * { break-inside: avoid; margin-bottom: 0.5rem; }
 
-/* varian rapat full-bleed ala jamespopsys (homepage) */
-.masonry.tight { columns: 1; column-gap: 6px; }
-@media (min-width: 640px) { .masonry.tight { columns: 2; } }
-@media (min-width: 1280px) { .masonry.tight { columns: 4; } }
-.masonry.tight > * { margin-bottom: 6px; }
+/* varian rapat full-bleed ala jamespopsys (homepage) — 1 kolom, spacing tebal */
+.masonry.tight { columns: 1; column-gap: 0; }
+.masonry.tight > * { margin-bottom: 2rem; }
 
 dialog::backdrop { background: rgba(10, 9, 8, 0.92); }
 
