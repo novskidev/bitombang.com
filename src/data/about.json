@@ -1,1 +1,9 @@
-{"heading":"Hi, I'm Budi Pambudi.","intro":"A photographer based in Melbourne, Australia. I shoot weddings, portraits, and landscapes — with a warm, candid style and minimal stiff posing.","quote":"The best photo is the one that makes you remember the day, not just see the result.","photo":{"src":"https://picsum.photos/seed/bt-profile/560/700","alt":"Photo of Budi Pambudi"}}
+{
+  "heading": "Hi, I'm Budi.",
+  "intro": "I’m a photographer currently focused on everyday photography. Focusing on this genre gives me the flexibility to keep my shooting and editing skills developing without sacrificing my daily work commitments. I love documenting places, friend and moment that meaningful to me. \n\nHaving taken a long hiatus from photography, I’m now using this space as my playground to practice and reconnect with the medium.",
+  "quote": "Almost everything happened before the shutter. ",
+  "photo": {
+    "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789886475/DSCF7670.jpg",
+    "alt": "Photo of Budi Pambudi"
+  }
+}
