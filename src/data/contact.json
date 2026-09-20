@@ -1,1 +1,8 @@
-{"heading":"Contact","note":"Replies within 24 hours on working days.","photo":{"src":"https://picsum.photos/seed/bt-contact/800/600","alt":"Budi Pambudi at work"}}
+{
+  "heading": "Contact",
+  "note": "Replies within 24 hours on working days.",
+  "photo": {
+    "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789886809/DSCF6553.jpg",
+    "alt": "Budi Pambudi at work"
+  }
+}
