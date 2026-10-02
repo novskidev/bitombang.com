@@ -39,12 +39,6 @@
     {
       "w": 800,
       "h": 1000,
-      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474579/DSCF7769.jpg",
-      "alt": "Hanging on worst feeling?"
-    },
-    {
-      "w": 800,
-      "h": 1000,
       "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789474584/DSCF7474.jpg",
       "alt": "Early morning"
     },
@@ -89,6 +83,42 @@
       "h": 1000,
       "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789475014/DSCF7664.jpg",
       "alt": "Selfie."
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1790911681/DSCF7888.jpg",
+      "alt": "Melbournian."
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1790911683/DSCF8522.jpg",
+      "alt": "Naomi, Merry."
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1790911686/DSCF8475.jpg",
+      "alt": "Mr. Raihan"
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1790911331/DSCF7895.jpg",
+      "alt": "Bertiga."
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1790911826/DSCF7706.jpg",
+      "alt": "Kerut."
+    },
+    {
+      "w": 800,
+      "h": 1000,
+      "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1790911830/DSCF8024.jpg",
+      "alt": "St. Kilda Sunset."
     }
   ]
 }
