@@ -56,21 +56,6 @@ collections:
               - { name: w, label: Width, widget: number, default: 800, required: false }
               - { name: h, label: Height, widget: number, default: 1000, required: false }
 
-  - name: blog
-    label: Blog
-    folder: src/content/blog
-    create: true
-    slug: "{{slug}}"
-    extension: md
-    format: frontmatter
-    fields:
-      - { name: title, label: Title, widget: string }
-      - { name: date, label: Date, widget: datetime }
-      - { name: excerpt, label: Excerpt, widget: text }
-      - { name: cover, label: Cover, widget: image, required: false }
-      - { name: draft, label: Draft, widget: boolean, default: false, required: false }
-      - { name: body, label: Body, widget: markdown }
-
       - name: about
         label: About page
         file: src/data/about.json
@@ -124,3 +109,18 @@ collections:
                   - { name: alt, label: Caption, widget: string }
                   - { name: w, label: Width, widget: number, default: 800, required: false }
                   - { name: h, label: Height, widget: number, default: 1000, required: false }
+
+  - name: blog
+    label: Blog
+    folder: src/content/blog
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Date, widget: datetime }
+      - { name: excerpt, label: Excerpt, widget: text }
+      - { name: cover, label: Cover, widget: image, required: false }
+      - { name: draft, label: Draft, widget: boolean, default: false, required: false }
+      - { name: body, label: Body, widget: markdown }
