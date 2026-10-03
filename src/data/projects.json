@@ -57,12 +57,6 @@
         {
           "w": 800,
           "h": 1000,
-          "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789894049/DSCB1038.jpg",
-          "alt": "-"
-        },
-        {
-          "w": 800,
-          "h": 1000,
           "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789894049/DSCB1111.jpg",
           "alt": "-"
         },
@@ -87,12 +81,6 @@
         {
           "w": 800,
           "h": 1000,
-          "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789894044/DSCB1004.jpg",
-          "alt": "-"
-        },
-        {
-          "w": 800,
-          "h": 1000,
           "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789894044/DSCB1019.jpg",
           "alt": "-"
         },
@@ -100,12 +88,6 @@
           "w": 800,
           "h": 1000,
           "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789894042/DSCB0816.jpg",
-          "alt": "-"
-        },
-        {
-          "w": 800,
-          "h": 1000,
-          "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789894043/DSCB0981.jpg",
           "alt": "-"
         },
         {
@@ -119,6 +101,42 @@
           "h": 1000,
           "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1789894041/DSCB0775.jpg",
           "alt": "-"
+        },
+        {
+          "w": 800,
+          "h": 1000,
+          "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1791044909/DSCB0590.jpg",
+          "alt": "The hut inside farm barrier."
+        },
+        {
+          "w": 800,
+          "h": 1000,
+          "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1791044915/DSCB0651.jpg",
+          "alt": "Patta Sorong Hut."
+        },
+        {
+          "w": 800,
+          "h": 1000,
+          "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1791044907/DSCB0553.jpg",
+          "alt": "On the making."
+        },
+        {
+          "w": 800,
+          "h": 1000,
+          "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1791044915/DSCB0568.jpg",
+          "alt": "Patta Sorong"
+        },
+        {
+          "w": 800,
+          "h": 1000,
+          "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1791045298/DSCB0681.jpg",
+          "alt": "The Glasses"
+        },
+        {
+          "w": 800,
+          "h": 1000,
+          "src": "https://res.cloudinary.com/agnegwuz/image/upload/v1791045305/DSCB0705.jpg",
+          "alt": "Young Boy with The Glasses"
         }
       ]
     },
