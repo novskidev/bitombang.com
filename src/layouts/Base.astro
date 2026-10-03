@@ -43,7 +43,7 @@ const showBrand = path === withBase('/') || path.startsWith(withBase('/contact')
 <body class="antialiased">
   <!-- brand mobile (in-flow header, ikut scroll) -->
   {showBrand && (
-  <div id="brandBar" class="pl-5 pr-4 pt-5 md:hidden">
+  <div id="brandBar" class="pl-5 pr-4 pt-[21px] md:hidden">
     <a href={withBase('/')} aria-label="Home"
       class="font-sans text-lg font-bold uppercase leading-none tracking-[0.01em]">
       {SITE.name}
