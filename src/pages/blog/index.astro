@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { withBase } from '../../lib/base';
+
+const posts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => +b.data.date - +a.data.date);
+---
+<Base title="Blog" desc="Cerita di balik foto dan artikel fotografi Bitombang.">
+  <h1 class="font-sans text-4xl font-semibold">Blog</h1>
+  <p class="mt-2 text-ink/60">Cerita foto & artikel.</p>
+  <div class="mt-8 grid gap-8 sm:grid-cols-2">
+    {posts.map((p) => (
+      <a href={withBase(`/blog/${p.slug}`)} class="group block">
+        {p.data.cover && (
+          <div class="overflow-hidden bg-ink/5">
+            <img src={p.data.cover} alt={p.data.title} loading="lazy"
+              class="aspect-[3/2] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+          </div>
+        )}
+        <h2 class="mt-3 font-sans text-2xl group-hover:underline">{p.data.title}</h2>
+        <p class="text-sm text-ink/60">
+          {p.data.date.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+        </p>
+        <p class="mt-1 text-ink/80">{p.data.excerpt}</p>
+      </a>
+    ))}
+  </div>
+</Base>
