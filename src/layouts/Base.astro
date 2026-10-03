@@ -43,7 +43,7 @@ const showBrand = path === withBase('/') || path.startsWith(withBase('/contact')
 <body class="antialiased">
   <!-- brand mobile (in-flow header, ikut scroll) -->
   {showBrand && (
-  <div class="px-4 pt-4 md:hidden">
+  <div id="brandBar" class="px-4 pt-4 md:hidden">
     <a href={withBase('/')} aria-label="Home"
       class="font-sans text-lg font-bold uppercase leading-none tracking-[0.01em]">
       {SITE.name}
@@ -98,7 +98,9 @@ const showBrand = path === withBase('/') || path.startsWith(withBase('/contact')
     const btn = document.getElementById('menuBtn');
     const bar = document.getElementById('sidebar');
     const drop = document.getElementById('backdrop');
+    const brand = document.getElementById('brandBar');
     const setMenu = (open) => {
+      brand?.classList.toggle('hidden', open);
       bar?.classList.toggle('hidden', !open);
       bar?.classList.toggle('flex', open);
       drop?.classList.toggle('hidden', !open);
